@@ -98,3 +98,13 @@ uv run pytest
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Part 2: validation
+
+Part 2 checks what Part 1 built without changing it. See [docs/validation.md](docs/validation.md).
+
+```bash
+uv run python -m evals.quiz_eval slides/lecture.md --gate v2   # intent gates on saved quizzes
+uv run python -m evals.mutate                                  # do the tests catch planted bugs?
+EVAL_MODEL=llama3.2:3b uv run python -m evals.solver v2        # blind student (needs Ollama)
+```

@@ -1,0 +1,32 @@
+# Expensive evaluation: only when code is promoted to stage or prod. Model calls cost time
+# and money, so development branches never run this.
+name: evals
+on:
+  push:
+    branches: [stage, prod]
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      QUIZGEN_MODEL: qwen3:8b
+      EVAL_MODEL: llama3.2:3b        # a different model grades: avoids circular judging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Start Ollama and pull the models
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve & sleep 5
+          ollama pull "$QUIZGEN_MODEL" && ollama pull "$EVAL_MODEL"
+      - name: Generate 5 fresh quizzes with v2
+        run: for i in 1 2 3 4 5; do uv run python -m quizgen.v2_graph slides/lecture.md; done
+      - run: uv run python -m evals.quiz_eval slides/lecture.md --gate v2
+      - run: uv run python -m evals.solver v2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-reports
+          path: evals/reports/
