@@ -73,3 +73,22 @@ npx @marp-team/marp-cli@latest slides/lecture.md --html   # render slides
 ```
 
 Tests must not call a real model: inject a fake LLM into the code under test.
+
+## Validation (Part 2)
+
+Part 2 adds checks on top of Part 1 without changing Part 1's code.
+
+- **Design first:** for a new feature, use the `designer` sub-agent and wait for a human to
+  approve the plan in `docs/plans/`. Read approved plans before reading code; they are the
+  project's memory.
+- **Before you say a version is done:** run the `test-auditor` and `security-reviewer`
+  sub-agents, then generate 5 quizzes and run the `evaluator` sub-agent. Report its verdict.
+- **Never edit a gate in `evals/` to make a run pass.** Gates change only in a reviewed PR.
+- **Cost tiers:** `evals/quiz_eval.py` is deterministic and cheap (every PR).
+  `evals/solver.py` calls a model per question (stage and prod pushes only).
+
+```bash
+uv run python -m evals.quiz_eval slides/lecture.md --gate v2   # intent gates
+uv run python -m evals.mutate                                  # do the tests catch bugs?
+EVAL_MODEL=llama3.2:3b uv run python -m evals.solver v2        # blind student (slow)
+```

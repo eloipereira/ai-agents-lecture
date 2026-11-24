@@ -1,0 +1,31 @@
+// GitHub Codespaces / VS Code dev container for the CE290 lecture repo.
+// uv reads .python-version and downloads Python 3.14 itself, so the base image's Python does not matter.
+{
+  "name": "ai-agents-lecture",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "containerEnv": {
+    "UV_LINK_MODE": "copy"
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "marp-team.marp-vscode"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "files.eol": "\n"
+      }
+    }
+  }
+}
