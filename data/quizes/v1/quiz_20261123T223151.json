@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Control flow in coding agents",
+      "stem": "Who owns the control flow in a coding agent?",
+      "options": [
+        "The model",
+        "The program",
+        "Both the model and the program",
+        "Neither the model nor the program"
+      ],
+      "answer_index": 0,
+      "source_quote": "Who owns the control flow?",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Agent definition",
+      "stem": "What is an agent according to the text?",
+      "options": [
+        "A model using tools in a loop",
+        "A model that can only run code",
+        "A program that runs without feedback",
+        "A model that runs without tools"
+      ],
+      "answer_index": 0,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Agent feedback loop",
+      "stem": "What is the role of the feedback loop in an agent?",
+      "options": [
+        "To run the model without checks",
+        "To ensure the model's output is correct",
+        "To provide the model with more tokens",
+        "To increase the model's temperature"
+      ],
+      "answer_index": 1,
+      "source_quote": "The feedback loop checks it.",
+      "difficulty": "hard"
+    },
+    {
+      "concept": "Agent harness",
+      "stem": "What is the harness in an agent?",
+      "options": [
+        "The model itself",
+        "The code that runs around the model",
+        "The feedback loop",
+        "The tool loop"
+      ],
+      "answer_index": 1,
+      "source_quote": "The harness is everything that is not the model.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Agent workflow",
+      "stem": "What is the main idea of the V-model in working with agents?",
+      "options": [
+        "The model writes the code",
+        "The agent writes the code",
+        "The harness writes the code",
+        "The user writes the code"
+      ],
+      "answer_index": 1,
+      "source_quote": "You write the spec and the checks. The agent writes the code.",
+      "difficulty": "easy"
+    }
+  ]
+}

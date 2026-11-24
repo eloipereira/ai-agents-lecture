@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Control flow ownership",
+      "stem": "Who owns the control flow?",
+      "options": [
+        "The operating system",
+        "The user",
+        "The compiler",
+        "The programmer"
+      ],
+      "answer_index": 3,
+      "source_quote": "Who owns the control flow?",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Error compounding",
+      "stem": "Which of the following best explains the meaning of the quote: '95% right per step is 36% right after 20 steps.'?",
+      "options": [
+        "It shows that small errors can compound over time, leading to a significant loss of accuracy.",
+        "It indicates that accuracy improves with more steps, so 20 steps are better than 1.",
+        "It means that being correct 95% of the time guarantees being correct 36% of the time in the long run.",
+        "It suggests that making mistakes is less harmful when done over many steps."
+      ],
+      "answer_index": 0,
+      "source_quote": "95% right per step is 36% right after 20 steps.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Agent architecture",
+      "stem": "According to the statement 'An agent is a model using tools in a loop,' which of the following best describes the core concept of an agent's operation?",
+      "options": [
+        "An agent relies solely on pre-programmed rules to make decisions without external input.",
+        "An agent operates in isolation and does not interact with external tools or environments.",
+        "An agent continuously cycles through perception, decision-making, and action using available tools.",
+        "An agent's primary function is to store and retrieve data without processing it."
+      ],
+      "answer_index": 2,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Harness engineering",
+      "stem": "According to the quote 'The harness is everything that is not the model,' which statement best defines what the harness represents?",
+      "options": [
+        "The harness consists of all elements excluding the model.",
+        "The harness is the same as the model.",
+        "The harness is a subset of the model.",
+        "The harness includes all components of the model."
+      ],
+      "answer_index": 0,
+      "source_quote": "The harness is everything that is not the model.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Tool loop and feedback loop",
+      "stem": "Which of the following best describes the relationship between the tool loop and the feedback loop, based on the quote: 'The tool loop does the work. The feedback loop checks it.'?",
+      "options": [
+        "The tool loop and the feedback loop are both responsible for executing tasks.",
+        "The tool loop performs the action, while the feedback loop evaluates the outcome.",
+        "The tool loop and the feedback loop operate independently and have no direct relationship.",
+        "The feedback loop is responsible for initiating the process, and the tool loop ensures it is completed."
+      ],
+      "answer_index": 1,
+      "source_quote": "The tool loop does the work. The feedback loop checks it.",
+      "difficulty": "hard"
+    }
+  ]
+}
